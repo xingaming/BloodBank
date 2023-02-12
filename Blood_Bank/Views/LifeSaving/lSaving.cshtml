@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "lSaving";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="counts" class="counts">
+    <div class="container count-box" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>List life saving</h2>
+            <a asp-action="Index" asp-controller="LifeSaving" asp-route-id="@ViewBag.Id">Back</a>
+        </div>
+
+        
+
+        <div class="row">
+            <table style="text-align:center" class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Contact number</th>
+                    <th>Email</th>
+                </tr>
+                @if (ViewBag.ListLifeSaving != null)
+                {
+                    @foreach (var item in ViewBag.ListLifeSaving)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.City</td>
+                            <td>@item.ContactNumber</td>
+                            <td>@item.Email</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+    </div>
+</section><!-- End Services Section -->
+
+<style>
+    .view {
+        border: none;
+        background-color: #C6414C;
+        color: #ffffff;
+        border-radius: 7px;
+        width: 100px;
+    }
+
+        .view:hover {
+            background-color: #B30513;
+        }
+
+    .searchSelect {
+        width: 100%;
+        border: 1px solid;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+    }
+
+        .searchSelect:focus {
+            border-color: #C6414C;
+        }
+
+    .searchButton {
+        background-color: #C6414C;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        color: #fff;
+        outline: none;
+    }
+
+        .searchButton:hover {
+            background-color: #B30513;
+        }
+</style>
+

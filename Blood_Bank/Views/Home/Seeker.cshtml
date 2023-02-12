@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Seeker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services services">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Blood Seeker</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon"><i class="fa fa-phone-square"></i></div>
+                <h4 class="title"><a asp-action="LifeSaving" asp-controller="Seekers">Life Saving Contact</a></h4>
+                <p class="description">If you can't find the information you need, here are the details to contact our lifesavers.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon"><i class="fa fa-search"></i></div>
+                <h4 class="title"><a asp-action="SearchDonor" asp-controller="Seekers">Donor search</a></h4>
+                <p class="description">Find the donor information you need.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon"><i class="fa fa-volume-control-phone"></i></div>
+                <h4 class="title"><a asp-action="Mobilink" asp-controller="Seekers">Mobilink Paging Services</a></h4>
+                <p class="description">If you can't find the information you need and cannot contact lifeguards, this service may be able to help.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Services Section -->
+

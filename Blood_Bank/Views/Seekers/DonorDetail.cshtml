@@ -1,0 +1,127 @@
+﻿@model Blood_Bank.Models.User
+@{
+    ViewData["Title"] = "Donor Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ======= Appointment Section ======= -->
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Donor Detail</h2>
+        </div>
+        <form asp-action="" method="POST" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <input type="text" asp-for="Name" placeholder="Your Name" disabled>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="email" asp-for="Email" placeholder="Your Email" disabled>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="number" asp-for="Weight" placeholder="Your Weight" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="date" class=" datepicker" asp-for="Dob" placeholder="Date Of Birth" disabled>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="tel" class="" asp-for="ContactNumber" placeholder="Your Phone" disabled>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <select asp-for="BloodGroup" class="sele" disabled>
+                        <option value="" disabled selected>Blood group</option>
+                        <option value="1">Group A</option>
+                        <option value="2">Group B</option>
+                        <option value="3">Group AB</option>
+                        <option value="4">Group O</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" class=" datepicker" asp-for="Address" placeholder="Your Address" disabled>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" asp-for="City" disabled />
+                </div>
+                <div class="col-md-4 mt-3 form-group">
+                    <select asp-for="Gender" class="sele" disabled>
+                        <option value="" disabled selected>Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Fmale</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 form-group mt-3">
+                <br />
+            </div>
+            <div class="text-center">
+                <a class="loginC" asp-action="SearchDonor" asp-controller="Seekers">Back</a>
+            </div>
+        </form>
+
+    </div>
+</section><!-- End Appointment Section -->
+
+<style>
+    .loginC {
+        background: #C6414C;
+        border: 0;
+        padding: 10px 35px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 50px;
+    }
+
+        .loginC:hover {
+            color: #fff;
+            background: #B30513;
+        }
+
+    input {
+        width: 100%;
+        border: 1px solid;
+        border-color: #CED4DA;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+        border-radius: 20px;
+    }
+
+        input:focus {
+            border-color: #C6414C;
+        }
+
+    .sele {
+        width: 100%;
+        border: 1px solid;
+        border-color: #CED4DA;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+        border-radius: 100px;
+    }
+
+        .sele:focus {
+            border-color: #C6414C;
+        }
+
+    .regis {
+        background: #C6414C;
+        border: 0;
+        padding: 10px 35px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 50px;
+    }
+
+        .regis:hover {
+            background: #B30513;
+        }
+</style>
+

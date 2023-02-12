@@ -1,0 +1,69 @@
+﻿@model Blood_Bank.Models.User
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <!-- ======= Appointment Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <form asp-action="Login" class="col-md-4 fr" method="post" role="form" style=" display: block; margin-left: auto; margin-right: auto; border-radius: 15px;">
+                        <h2>Login</h2>
+                        @if (TempData["message"] != null)
+                        {
+                            @*<script>alert('@TempData["message"]');</script>*@
+                            <div style="text-align:center;">
+                                <span style="color:red;">@TempData["message"]</span><br><br>
+                            </div>
+                        }
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="text" asp-for="Username" placeholder="Username" required/>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" asp-for="Password" placeholder="Password" required/>
+                        </div><br>
+                        <div class="text-center"><button class="loginC" type="submit">Login</button></div>
+                    </form>
+                </div>
+
+
+            </div>
+        </section><!-- End Appointment Section -->
+
+    <style>
+         .loginC {
+            background: #C6414C;
+            border: 0;
+            padding: 10px 35px;
+            color: #fff;
+            transition: 0.4s;
+            border-radius: 25px;
+        }
+
+        .loginC:hover {
+            background: #B30513;
+        }
+        input{
+        width: 100%;
+        border: 1px solid ;
+        border-color: #CED4DA;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+        border-radius: 12px ;
+        }
+        input:focus{
+        border-color: #C6414C;
+        }
+        .fr{
+            box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            padding: 30px 20px 30px 20px;
+        }
+    </style>
+

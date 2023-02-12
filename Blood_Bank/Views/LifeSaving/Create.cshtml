@@ -1,0 +1,251 @@
+﻿@model Blood_Bank.Models.User
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Create new life saving</h2>
+        </div>
+        @if (TempData["message"] != null)
+        {
+            @*<script>alert('@TempData["message"]');</script>*@
+            <div style="text-align: center;">
+                <span style="color: red">@TempData["message"]</span><br><br>
+            </div>
+        }
+        @if (TempData["message2"] != null)
+        {
+            @*<script>alert('@TempData["message"]');</script>*@
+            <div style="text-align: center;">
+                <span style="color: limegreen">@TempData["message2"]</span><br><br>
+            </div>
+        }
+        <form asp-action="Create" method="POST" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <input type="text" asp-for="Name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="email" asp-for="Email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="tel" class="" asp-for="ContactNumber" placeholder="Your Phone" required>
+                </div>
+                    <input hidden value="0" type="number" asp-for="Weight" placeholder="Your Weight" required>
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="date" class=" datepicker" asp-for="Dob" placeholder="Date Of Birth" required>
+                </div>        
+                    <select hidden asp-for="BloodGroup" class="sele" required>
+                        <option value="1" selected>Group A</option>
+                        <option value="2">Group B</option>
+                        <option value="3">Group AB</option>
+                        <option value="4">Group O</option>
+                    </select>
+                  <div class="col-md-4 form-group mt-3">
+                    <select asp-for="City" class="sele" required>
+                        <option value="" disabled selected>Your City</option>
+                        <option disabled value="">--Viet Nam--</option>
+          <!--- Viet Nam states -->
+                        <option value="An Giang">An Giang</option>
+                        <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
+                        <option value="Bắc Giang">Bắc Giang</option>
+                        <option value="Bắc Kạn">Bắc Kạn</option>
+                        <option value="Bạc Liêu">Bạc Liêu</option>
+                        <option value="Bắc Ninh">Bắc Ninh</option>
+                        <option value="Bến Tre">Bến Tre</option>
+                        <option value="Bình Dương">Bình Dương</option>
+                        <option value="Bình Định">Bình Định</option>
+                        <option value="Bình Phước">Bình Phước</option>
+                        <option value="Bình Thuận">Bình Thuận</option>
+                        <option value="Cà Mau">Cà Mau</option>
+                        <option value="Cao Bằng">Cao Bằng</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Đắk Lắk">Đắk Lắk</option>
+                        <option value="Đắk Nông">Đắk Nông</option>
+                        <option value="Điện Biên">Điện Biên</option>
+                        <option value="Đồng Nai">Đồng Nai</option>
+                        <option value="Đồng Tháp">Đồng Tháp</option>
+                        <option value="Gia Lai">Gia Lai</option>
+                        <option value="Hà Giang">Hà Giang</option>
+                        <option value="Hà Nam">Hà Nam</option>
+                        <option value="Hà Tây">Hà Tây</option>
+                        <option value="Hà Tĩnh">Hà Tĩnh</option>
+                        <option value="Hải Dương">Hải Dương</option>
+                        <option value="Hải Phòng">Hải Phòng</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Hậu Giang">Hậu Giang</option>
+                        <option value="Ho Chi Minh City">Ho Chi Minh City</option>
+                        <option value="Hòa Bình">Hòa Bình</option>
+                        <option value="Hưng Yên">Hưng Yên</option>
+                        <option value="Khánh Hòa">Khánh Hòa</option>
+                        <option value="Kiên Giang">Kiên Giang</option>
+                        <option value="Kon Tum">Kon Tum</option>
+                        <option value="Lai Châu">Lai Châu</option>
+                        <option value="Lâm Đồng">Lâm Đồng</option>
+                        <option value="Lạng Sơn">Lạng Sơn</option>
+                        <option value="Lào Cai">Lào Cai</option>
+                        <option value="Long An">Long An</option>
+                        <option value="Nam Định">Nam Định</option>
+                        <option value="Nghệ An">Nghệ An</option>
+                        <option value="Ninh Bình">Ninh Bình</option>
+                        <option value="Ninh Thuận">Ninh Thuận</option>
+                        <option value="Phú Thọ">Phú Thọ</option>
+                        <option value="Phú Yên">Phú Yên</option>
+                        <option value="Quảng Bình">Quảng Bình</option>
+                        <option value="Quảng Nam">Quảng Nam</option>
+                        <option value="Quảng Ngãi">Quảng Ngãi</option>
+                        <option value="Quảng Ninh">Quảng Ninh</option>
+                        <option value="Quảng Trị">Quảng Trị</option>
+                        <option value="Sóc Trăng">Sóc Trăng</option>
+                        <option value="Sơn La">Sơn La</option>
+                        <option value="Tây Ninh">Tây Ninh</option>
+                        <option value="Thái Bình">Thái Bình</option>
+                        <option value="Thái Nguyên">Thái Nguyên</option>
+                        <option value="Thanh Hóa">Thanh Hóa</option>
+                        <option value="Thừa Thiên-Huế">Thừa Thiên-Huế</option>
+                        <option value="Tiền Giang">Tiền Giang</option>
+                        <option value="Trà Vinh">Trà Vinh</option>
+                        <option value="Tuyên Quang">Tuyên Quang</option>
+                        <option value="Vĩnh Long">Vĩnh Long</option>
+                        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                        <option value="Yên Bái">Yên Bái</option>
+
+                        <!--- India states -->
+                        <option disabled value="">--India--</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mt-3 form-group">
+                    <select asp-for="Gender" class="sele" required>
+                        <option value="" disabled selected>Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Fmale</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <input hidden value="null" type="text" class=" datepicker" asp-for="Address" placeholder="Your Address" required>
+              
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" class="" asp-for="Username" placeholder="Username" required>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="password" class="" asp-for="Password" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="col-md-12 form-group mt-3">
+            </div>
+            <div class="text-center">
+                <a class="loginC" asp-action="Index" asp-controller="LifeSaving" asp-route-id="@ViewBag.Id">Back</a>
+                <button class="regis" type="submit" value="Create">Create</button>
+
+            </div>
+        </form>
+
+    </div>
+</section><!-- End Appointment Section -->
+
+
+<style>
+    .loginC {
+        background: #C6414C;
+        border: 0;
+        padding: 10px 35px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 50px;
+    }
+
+        .loginC:hover {
+            color: #fff;
+            background: #B30513;
+        }
+
+    input {
+        width: 100%;
+        border: 1px solid;
+        border-color: #CED4DA;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+        border-radius: 20px;
+    }
+
+        input:focus {
+            border-color: #C6414C;
+        }
+
+    .sele {
+        width: 100%;
+        border: 1px solid;
+        border-color: #CED4DA;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+        border-radius: 100px;
+    }
+
+        .sele:focus {
+            border-color: #C6414C;
+        }
+
+    .regis {
+        background: #C6414C;
+        border: 0;
+        padding: 10px 35px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 50px;
+    }
+
+        .regis:hover {
+            background: #B30513;
+        }
+</style>
+

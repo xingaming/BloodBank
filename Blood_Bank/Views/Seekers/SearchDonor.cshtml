@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewData["Title"] = "SearchDonor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="counts" class="counts">
+    <div class="container count-box" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Search Donor</h2>
+        </div>
+
+        @if(ViewBag.mess != null){
+            @*<script>alert('@TempData["message"]');</script>*@
+            <div style="text-align: center;">
+                <span style="color: red; font-size: smaller">@ViewBag.mess</span><br><br>
+            </div>
+        }
+
+        <form asp-action="SearchDonor" method="POST" role="form" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              
+                <div class="col-md-4 form-group mt-3">
+                    <select name="city" id="city" class="searchSelect" required>
+                        <option disabled selected value="">--Area--</option>
+                        <option disabled value="">--Viet Nam--</option>
+                        <!--- Viet Nam states -->
+                            <option value="An Giang">An Giang</option>
+                            <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
+                            <option value="Bắc Giang">Bắc Giang</option>
+                            <option value="Bắc Kạn">Bắc Kạn</option>
+                            <option value="Bạc Liêu">Bạc Liêu</option>
+                            <option value="Bắc Ninh">Bắc Ninh</option>
+                            <option value="Bến Tre">Bến Tre</option>
+                            <option value="Bình Dương">Bình Dương</option>
+                            <option value="Bình Định">Bình Định</option>
+                            <option value="Bình Phước">Bình Phước</option>
+                            <option value="Bình Thuận">Bình Thuận</option>
+                            <option value="Cà Mau">Cà Mau</option>
+                            <option value="Cao Bằng">Cao Bằng</option>
+                            <option value="Đà Nẵng">Đà Nẵng</option>
+                            <option value="Đắk Lắk">Đắk Lắk</option>
+                            <option value="Đắk Nông">Đắk Nông</option>
+                            <option value="Điện Biên">Điện Biên</option>
+                            <option value="Đồng Nai">Đồng Nai</option>
+                            <option value="Đồng Tháp">Đồng Tháp</option>
+                            <option value="Gia Lai">Gia Lai</option>
+                            <option value="Hà Giang">Hà Giang</option>
+                            <option value="Hà Nam">Hà Nam</option>
+                            <option value="Hà Tây">Hà Tây</option>
+                            <option value="Hà Tĩnh">Hà Tĩnh</option>
+                            <option value="Hải Dương">Hải Dương</option>
+                            <option value="Hải Phòng">Hải Phòng</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Hậu Giang">Hậu Giang</option>
+                            <option value="Ho Chi Minh City">Ho Chi Minh City</option>
+                            <option value="Hòa Bình">Hòa Bình</option>
+                            <option value="Hưng Yên">Hưng Yên</option>
+                            <option value="Khánh Hòa">Khánh Hòa</option>
+                            <option value="Kiên Giang">Kiên Giang</option>
+                            <option value="Kon Tum">Kon Tum</option>
+                            <option value="Lai Châu">Lai Châu</option>
+                            <option value="Lâm Đồng">Lâm Đồng</option>
+                            <option value="Lạng Sơn">Lạng Sơn</option>
+                            <option value="Lào Cai">Lào Cai</option>
+                            <option value="Long An">Long An</option>
+                            <option value="Nam Định">Nam Định</option>
+                            <option value="Nghệ An">Nghệ An</option>
+                            <option value="Ninh Bình">Ninh Bình</option>
+                            <option value="Ninh Thuận">Ninh Thuận</option>
+                            <option value="Phú Thọ">Phú Thọ</option>
+                            <option value="Phú Yên">Phú Yên</option>
+                            <option value="Quảng Bình">Quảng Bình</option>
+                            <option value="Quảng Nam">Quảng Nam</option>
+                            <option value="Quảng Ngãi">Quảng Ngãi</option>
+                            <option value="Quảng Ninh">Quảng Ninh</option>
+                            <option value="Quảng Trị">Quảng Trị</option>
+                            <option value="Sóc Trăng">Sóc Trăng</option>
+                            <option value="Sơn La">Sơn La</option>
+                            <option value="Tây Ninh">Tây Ninh</option>
+                            <option value="Thái Bình">Thái Bình</option>
+                            <option value="Thái Nguyên">Thái Nguyên</option>
+                            <option value="Thanh Hóa">Thanh Hóa</option>
+                            <option value="Thừa Thiên-Huế">Thừa Thiên-Huế</option>
+                            <option value="Tiền Giang">Tiền Giang</option>
+                            <option value="Trà Vinh">Trà Vinh</option>
+                            <option value="Tuyên Quang">Tuyên Quang</option>
+                            <option value="Vĩnh Long">Vĩnh Long</option>
+                            <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                            <option value="Yên Bái">Yên Bái</option>
+
+                            <!--- India states -->
+                            <option disabled value="">--India--</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <select name="bloodGroup" id="department" class="searchSelect" required>
+                        <option disable select value="">Blood group</option>
+                        <option value="1">Group A</option>
+                        <option value="2">Group B</option>
+                        <option value="3">Group AB</option>
+                        <option value="4">Group O</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <button class="searchButton" style="width: 100%" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+        <br><br>
+
+        <div class="row">
+            <table style="text-align:center" class="table">
+                  <tr>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Blood Group</th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                @if(ViewBag.list != null)
+                {
+                    @foreach (var item in ViewBag.list)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.City</td>
+                            <td>
+                                @if (item.BloodGroup == 1){
+                                    var BloodG = "A";
+                                    @BloodG
+                                }
+                                else if (item.BloodGroup == 2){
+                                    var BloodG = "B";
+                                    @BloodG
+                                }
+                                else if (item.BloodGroup == 3){
+                                    var BloodG = "AB";
+                                    @BloodG
+                                } else {
+                                    var BloodG = "O";
+                                    @BloodG
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="DonorDetail" asp-route-id="@item.Id">View detail</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+    </div>
+</section><!-- End Services Section -->
+
+<style>
+    .view {
+        border: none;
+        background-color: #C6414C;
+        color: #ffffff;
+        border-radius: 7px;
+        width: 100px;
+    }
+
+        .view:hover {
+            background-color: #B30513;
+        }
+
+    .searchSelect {
+        width: 100%;
+        border: 1px solid;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        outline: none;
+    }
+
+        .searchSelect:focus {
+            border-color: #C6414C;
+        }
+
+    .searchButton {
+        background-color: #C6414C;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        font-size: 14px;
+        padding: 10px 15px;
+        color: #fff;
+        outline: none;
+    }
+
+        .searchButton:hover {
+            background-color: #B30513;
+        }
+</style>
+

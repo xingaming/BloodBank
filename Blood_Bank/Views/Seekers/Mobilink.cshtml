@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewData["Title"] = "Mobilink";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ======= Appointment Section ======= -->
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Mobilink Paging Service</h2>
+            <p>
+                Mobilink messaging service to send messages to all donors in the area requesting blood of a specific group. Donors who see the message and have the same blood type can then contact the individual needing blood to offer assistance.
+            </p>
+        </div>
+        @if (TempData["message"] != null)
+        {
+            @*<script>alert('@TempData["message"]');</script>*@
+            <div style="text-align: center;">
+                <span style="color: limegreen">@TempData["message"]</span><br><br>
+            </div>
+        }
+        <form asp-action="SendMailHtmls" asp-controller="Mail" method="post" role="form" class="php-email-form">
+            <div class="row">
+            <div class="col-md-6 form-group mt-6">
+                <input type="email" name="mail" id="name" placeholder="Your email" required="">
+            </div>
+            <div class="col-md-6 form-group mt-6">
+                <input type="tel" name="phone" id="email" placeholder="Your phone" required="">
+            </div>
+            <div class="my-2"></div>
+            <div class="form-group mt-12">
+                <textarea name="message" rows="7" placeholder="Message" required=""></textarea>
+            </div>
+            <div class="my-2">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">You have successfully sent the message</div>
+            </div>
+            <div class="text-center"><button class="loginC" type="submit">Send Message</button></div>
+            </div>
+        </form>
+
+        @*<script>
+            function loading(){
+                thisForm.querySelector('.loading').classList.add('d-block');
+                setTimeout(function(){
+                    $("form").submit();
+                }, 1);
+                return true;
+            }
+            
+        </script>*@
+
+        <style>
+            .loginC {
+                background: #C6414C;
+                border: 0;
+                padding: 10px 35px;
+                color: #fff;
+                transition: 0.4s;
+                border-radius: 12px;
+            }
+
+                .loginC:hover {
+                    background: #B30513;
+                }
+
+            input {
+                width: 100%;
+                border: 1px solid;
+                border-color: #CED4DA;
+                box-shadow: none;
+                font-size: 14px;
+                padding: 10px 15px;
+                outline: none;
+                border-radius: 12px;
+            }
+
+                input:focus {
+                    border-color: #C6414C;
+                }
+
+            textarea {
+                width: 100%;
+                border: 1px solid;
+                border-color: #CED4DA;
+                box-shadow: none;
+                font-size: 14px;
+                padding: 10px 15px;
+                outline: none;
+                border-radius: 12px;
+            }
+
+                textarea:focus {
+                    border-color: #C6414C;
+                }
+        </style>
+
+    </div>
+</section><!-- End Appointment Section -->
+
