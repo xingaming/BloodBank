@@ -2,7 +2,9 @@
  <hr>
   <h2>Introducing</h2> 
   <p>The number of persons who are in need of blood are increasing in large
-number day by day. In order to help people who are in need of blood, my Online<pp>
+number day by day. In order to help people who are in need of blood, my Online
+Blood Bank can be used effectively for getting the details of blood donors having the
+same blood group and with in the same city.</p>
    <h2>Prerequisites</h2>
    <h4>Before you continue, ensure you meet the following requirements:</h4>
   <p>
